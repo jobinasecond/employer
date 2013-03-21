@@ -114,7 +114,7 @@ var app = {
 
         this.store = new MemoryStore(function () {
             $(document).bind("deviceready", function () {
-                
+                alert("Checking connection");
                 if (self.checkConnection() == Connection.NONE) {
                     // No internet, show the page
                     alert("no connection, bounced");
