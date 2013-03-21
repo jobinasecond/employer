@@ -115,7 +115,7 @@ var app = {
             $(document).bind("deviceready", function () {
                 alert("READY!");
                 alert("App: " + app);
-                app.checkConnection();
+                self.checkConnection();
             });
             self.route();
         });
