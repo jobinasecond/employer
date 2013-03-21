@@ -112,7 +112,6 @@ var app = {
             //var div = $("<div></div>")
             //    .attr("id", "errorDialog")
             //    .attr("title", "Javascript error!");
-
             //$("<p></p>").text(msg).appendTo(div);
             //$("<p></p>").text("Url: " + url).appendTo(div);
             //$("<p></p>").text("Line: " + line).appendTo(div);
