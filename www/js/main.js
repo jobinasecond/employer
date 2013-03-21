@@ -79,8 +79,9 @@ var app = {
 
     checkConnection: function () {
         alert("starting");
-        alert(navigator);
-        alert(navigator.network);
+        alert("navigator: " + navigator);
+        alert("navigator.network: " + navigator.network);
+        alert("navigator.networkState: " + navigator.networkState);
         alert(navigator.network.connection);
         alert(navigator.network.connection.type);
         var networkState = navigator.network.connection.type;
