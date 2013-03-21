@@ -78,6 +78,11 @@ var app = {
     },
 
     checkConnection: function () {
+        alert("starting");
+        alert(navigator);
+        alert(navigator.network);
+        alert(navigator.network.connection);
+        alert(navigator.network.connection.type);
         var networkState = navigator.network.connection.type;
 
         var states = {};
@@ -99,7 +104,7 @@ var app = {
         this.detailsURL = /^#employees\/(\d{1,})/;
         this.registerEvents();
         this.store = new MemoryStore(function () {
-            self.showAlert('Hi Scott, this is an alert', 'Info');
+            //self.showAlert('Hi Scott, this is an alert', 'Info');
             self.checkConnection();
             self.route();
         });
