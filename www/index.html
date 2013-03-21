@@ -1,17 +1,14 @@
 <html>
 <head>
-<script src="css/source-sans-pro.js"></script>
+    <script src="css/source-sans-pro.js"></script>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-    <body style="text-align: center; font-family: 'proxima-nova','Helvetica Neue',Helvetica,Arial,sans-serif; color: #596573;
-font-size: 20px;">
-        <span style="position: absolute;
-                                                        top: 50%;
-                                                        padding-top: 38%;
-                                                        padding-left: 40%;">Loading...</span>
-        <button class="btn btn-mini">Do something</button>
-<!--        <script type="text/javascript">
+<body style="text-align: center; font-family: 'proxima-nova','Helvetica Neue',Helvetica,Arial,sans-serif; color: #596573; font-size: 20px; position: relative;">
+    <div class="well alert-info" style="position: absolute; top: 50%; margin-top: -30px; width: 100%;">
+        Loading, please wait...
+    </div>
+    <!--        <script type="text/javascript">
             alert("binding!");
             alert("doc: " + document);
             alert("$doc: " + $(document));
@@ -22,7 +19,7 @@ font-size: 20px;">
             });
         </script>-->
 
-        <!--<script id="home-tpl" type="text/x-handlebars-template">
+    <!--<script id="home-tpl" type="text/x-handlebars-template">
     <div class='header'><h1>Home</h1></div>
     <div class='search-bar'><input class='search-key' type="search"/></div>
     <div class="scroll"><ul class='employee-list'></ul></div>
@@ -52,16 +49,16 @@ font-size: 20px;">
     </div>
 </script>-->
 
-        <script src="phonegap.js"></script>
-        <script src="lib/jquery-1.8.2.min.js"></script>
-        <script src="lib/handlebars.js"></script>
-        <script src="js/storage/memory-store.js"></script>
-        
-        <script src="js/bootstrap/bootstrap.js"></script>
+    <script src="phonegap.js"></script>
+    <script src="lib/jquery-1.8.2.min.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="js/storage/memory-store.js"></script>
 
-        <script src="js/HomeView.js"></script>
-        <script src="js/EmployeeView.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>
 
-    </body>
+    <script src="js/HomeView.js"></script>
+    <script src="js/EmployeeView.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 </html>
