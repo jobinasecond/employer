@@ -90,7 +90,7 @@ var app = {
         //states[Connection.CELL_4G] = 'Cell 4G connection';
         //states[Connection.NONE] = 'No network connection';
     },
-    
+
     displayConnection: function () {
         var networkState = navigator.network.connection.type;
 
@@ -106,6 +106,30 @@ var app = {
         alert('Connection type: ' + states[networkState]);
     },
 
+    trapErrors: function () {
+        window.onerror = function (msg, url, line) {
+            alert(msg);
+            //var div = $("<div></div>")
+            //    .attr("id", "errorDialog")
+            //    .attr("title", "Javascript error!");
+
+            //$("<p></p>").text(msg).appendTo(div);
+            //$("<p></p>").text("Url: " + url).appendTo(div);
+            //$("<p></p>").text("Line: " + line).appendTo(div);
+            //div.appendTo($("body")).dialog(
+            //    {
+            //        width: "auto",
+            //        buttons:
+            //        {
+            //            OK: function () {
+            //                $(this).dialog('close');
+            //                return true;
+            //            }
+            //        }
+            //    });
+            return true;
+        };
+    },
 
     initialize: function () {
         var self = this;
@@ -114,7 +138,7 @@ var app = {
 
         this.store = new MemoryStore(function () {
             $(document).bind("deviceready", function () {
-                alert("Checking connection");
+                //alert("Checking connection");
                 if (self.checkConnection() == Connection.NONE) {
                     // No internet, show the page
                     //alert("no connection, bounced");
