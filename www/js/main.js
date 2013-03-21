@@ -79,6 +79,21 @@ var app = {
     checkConnection: function () {
         var networkState = navigator.network.connection.type;
 
+        return networkState;
+
+        //var states = {};
+        //states[Connection.UNKNOWN] = 'Unknown connection';
+        //states[Connection.ETHERNET] = 'Ethernet connection';
+        //states[Connection.WIFI] = 'WiFi connection';
+        //states[Connection.CELL_2G] = 'Cell 2G connection';
+        //states[Connection.CELL_3G] = 'Cell 3G connection';
+        //states[Connection.CELL_4G] = 'Cell 4G connection';
+        //states[Connection.NONE] = 'No network connection';
+    },
+    
+    displayConnection: function () {
+        var networkState = navigator.network.connection.type;
+
         var states = {};
         states[Connection.UNKNOWN] = 'Unknown connection';
         states[Connection.ETHERNET] = 'Ethernet connection';
@@ -89,7 +104,6 @@ var app = {
         states[Connection.NONE] = 'No network connection';
 
         alert('Connection type: ' + states[networkState]);
-        self.showAlert(states[networkState], 'Connection type');
     },
 
 
@@ -99,11 +113,18 @@ var app = {
         this.registerEvents();
 
         this.store = new MemoryStore(function () {
-            self.showAlert('Hi Scott, this is an alert', 'Info');
             $(document).bind("deviceready", function () {
-                self.checkConnection();
+                
+                if (self.checkConnection() == Connection.NONE) {
+                    // No internet, show the page
+                    window.location = "offline.html";
+                } else {
+                    // Continue?
+                    // Redirect to normal mobile site?
+                    window.location = "https://www.jobinasecond.com";
+                }
             });
-            self.route();
+            //self.route();
         });
     }
 
