@@ -76,27 +76,27 @@ var app = {
         });
     },
 
-    checkConnection: function () {
-        alert("starting");
-        alert("navigator: " + navigator);
-        alert("navigator.network: " + navigator.network);
-        alert("navigator.networkState: " + navigator.networkState);
-        alert(navigator.network.connection);
-        alert(navigator.network.connection.type);
-        var networkState = navigator.network.connection.type;
+    //checkConnection: function () {
+    //    alert("starting");
+    //    alert("navigator: " + navigator);
+    //    alert("navigator.network: " + navigator.network);
+    //    alert("navigator.networkState: " + navigator.networkState);
+    //    alert(navigator.network.connection);
+    //    alert(navigator.network.connection.type);
+    //    var networkState = navigator.network.connection.type;
 
-        var states = {};
-        states[Connection.UNKNOWN] = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI] = 'WiFi connection';
-        states[Connection.CELL_2G] = 'Cell 2G connection';
-        states[Connection.CELL_3G] = 'Cell 3G connection';
-        states[Connection.CELL_4G] = 'Cell 4G connection';
-        states[Connection.NONE] = 'No network connection';
+    //    var states = {};
+    //    states[Connection.UNKNOWN] = 'Unknown connection';
+    //    states[Connection.ETHERNET] = 'Ethernet connection';
+    //    states[Connection.WIFI] = 'WiFi connection';
+    //    states[Connection.CELL_2G] = 'Cell 2G connection';
+    //    states[Connection.CELL_3G] = 'Cell 3G connection';
+    //    states[Connection.CELL_4G] = 'Cell 4G connection';
+    //    states[Connection.NONE] = 'No network connection';
 
-        alert('Connection type: ' + states[networkState]);
-        self.showAlert(states[networkState], 'Connection type');
-    },
+    //    alert('Connection type: ' + states[networkState]);
+    //    self.showAlert(states[networkState], 'Connection type');
+    //},
 
 
     initialize: function () {
@@ -110,13 +110,13 @@ var app = {
             //self.showAlert('Hi Scott, this is an alert', 'Info');
             //self.checkConnection();
             alert("binding!");
-            alert("doc: " + document);
-            alert("$doc: " + $(document));
-            $(document).bind("deviceReady", function () {
-                alert("READY!");
-                alert("App: " + app);
-                app.checkConnection();
-            });
+            //alert("doc: " + document);
+            //alert("$doc: " + $(document));
+            //$(document).bind("deviceReady", function () {
+            //    alert("READY!");
+            //    alert("App: " + app);
+            //    app.checkConnection();
+            //});
             self.route();
         });
     }
