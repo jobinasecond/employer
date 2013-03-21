@@ -74,7 +74,6 @@ var app = {
             $(page.el).attr('class', 'page stage-center transition');
             self.currentPage = page;
         });
-
     },
 
     checkConnection: function () {
@@ -104,9 +103,20 @@ var app = {
         var self = this;
         this.detailsURL = /^#employees\/(\d{1,})/;
         this.registerEvents();
+        
+
+
         this.store = new MemoryStore(function () {
             //self.showAlert('Hi Scott, this is an alert', 'Info');
             //self.checkConnection();
+            alert("binding!");
+            alert("doc: " + document);
+            alert("$doc: " + $(document));
+            $(document).bind("deviceReady", function () {
+                alert("READY!");
+                alert("App: " + app);
+                app.checkConnection();
+            });
             self.route();
         });
     }
