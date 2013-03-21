@@ -118,7 +118,7 @@ var app = {
                 if (self.checkConnection() == Connection.NONE) {
                     // No internet, show the page
                     //alert("no connection, bounced");
-                    navigator.app.loadurl("file:///android_asset/www/offline.html");
+                    navigator.app.loadUrl("file:///android_asset/www/offline.html");
                 } else {
                     // Continue?
                     // Redirect to normal mobile site?
