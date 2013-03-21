@@ -100,6 +100,7 @@ var app = {
         this.registerEvents();
         this.store = new MemoryStore(function () {
             self.showAlert('Hi Scott, this is an alert', 'Info');
+            self.checkConnection();
             self.route();
         });
     }
