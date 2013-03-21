@@ -77,12 +77,6 @@ var app = {
     },
 
     checkConnection: function () {
-        alert("starting");
-        alert("navigator: " + navigator);
-        alert("navigator.network: " + navigator.network);
-        alert("navigator.networkState: " + navigator.networkState);
-        alert("navigator.network.connection: " + navigator.network.connection);
-        alert("navigator.network.connection.type: " + navigator.network.connection.type);
         var networkState = navigator.network.connection.type;
 
         var states = {};
@@ -107,14 +101,9 @@ var app = {
 
 
         this.store = new MemoryStore(function () {
-            //self.showAlert('Hi Scott, this is an alert', 'Info');
-            //self.checkConnection();
-            alert("binding main init!");
-            //alert("doc: " + document);
-            //alert("$doc: " + $(document));
+            self.checkConnection();
+            self.showAlert('Hi Scott, this is an alert', 'Info');
             $(document).bind("deviceready", function () {
-                alert("READY!");
-                alert("App: " + app);
                 self.checkConnection();
             });
             self.route();
