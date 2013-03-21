@@ -8,17 +8,17 @@ var app = {
         }
     },
 
-    registerEvents: function() {
+    registerEvents: function () {
         $(window).on('hashchange', $.proxy(this.route, this));
-        $('body').on('mousedown', 'a', function(event) {
+        $('body').on('mousedown', 'a', function (event) {
             $(event.target).addClass('tappable-active');
         });
-        $('body').on('mouseup', 'a', function(event) {
+        $('body').on('mouseup', 'a', function (event) {
             $(event.target).removeClass('tappable-active');
         });
     },
 
-    route: function() {
+    route: function () {
         var self = this;
         var hash = window.location.hash;
         if (!hash) {
@@ -32,13 +32,13 @@ var app = {
         }
         var match = hash.match(this.detailsURL);
         if (match) {
-            this.store.findById(Number(match[1]), function(employee) {
+            this.store.findById(Number(match[1]), function (employee) {
                 self.slidePage(new EmployeeView(employee).render());
             });
         }
     },
 
-    slidePage: function(page) {
+    slidePage: function (page) {
 
         var currentPageDest,
             self = this;
@@ -67,7 +67,7 @@ var app = {
         $('body').append(page.el);
 
         // Wait until the new page has been added to the DOM...
-        setTimeout(function() {
+        setTimeout(function () {
             // Slide out the current page: If new page slides from the right -> slide current page to the left, and vice versa
             $(self.currentPage.el).attr('class', 'page transition ' + currentPageDest);
             // Slide in the new page
@@ -77,7 +77,24 @@ var app = {
 
     },
 
-    initialize: function() {
+    checkConnection: function () {
+        var networkState = navigator.network.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN] = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI] = 'WiFi connection';
+        states[Connection.CELL_2G] = 'Cell 2G connection';
+        states[Connection.CELL_3G] = 'Cell 3G connection';
+        states[Connection.CELL_4G] = 'Cell 4G connection';
+        states[Connection.NONE] = 'No network connection';
+
+        alert('Connection type: ' + states[networkState]);
+        self.showAlert(states[networkState], 'Connection type');
+    },
+
+
+    initialize: function () {
         var self = this;
         this.detailsURL = /^#employees\/(\d{1,})/;
         this.registerEvents();
