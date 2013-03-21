@@ -109,14 +109,14 @@ var app = {
         this.store = new MemoryStore(function () {
             //self.showAlert('Hi Scott, this is an alert', 'Info');
             //self.checkConnection();
-            alert("binding!");
+            alert("binding main init!");
             //alert("doc: " + document);
             //alert("$doc: " + $(document));
-            //$(document).bind("deviceReady", function () {
-            //    alert("READY!");
-            //    alert("App: " + app);
-            //    app.checkConnection();
-            //});
+            $(document).bind("deviceready", function () {
+                alert("READY!");
+                alert("App: " + app);
+                app.checkConnection();
+            });
             self.route();
         });
     }
