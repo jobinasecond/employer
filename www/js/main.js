@@ -98,10 +98,7 @@ var app = {
         this.detailsURL = /^#employees\/(\d{1,})/;
         this.registerEvents();
 
-
-
         this.store = new MemoryStore(function () {
-            self.checkConnection();
             self.showAlert('Hi Scott, this is an alert', 'Info');
             $(document).bind("deviceready", function () {
                 self.checkConnection();
