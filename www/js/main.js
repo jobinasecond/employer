@@ -117,11 +117,13 @@ var app = {
                 
                 if (self.checkConnection() == Connection.NONE) {
                     // No internet, show the page
-                    window.location = "offline.html";
+                    alert("no connection, bounced");
+                    navigator.app.loadUrl("http://www.ebay.com");
                 } else {
                     // Continue?
                     // Redirect to normal mobile site?
-                    window.location = "https://www.jobinasecond.com";
+                    alert("got internetz");
+                    navigator.app.loadUrl("https://www.jobinasecond.com");
                 }
             });
             //self.route();
